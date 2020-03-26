@@ -351,12 +351,13 @@ orderSelect.addEventListener('change', (event) => {
     listOrderPokemon = orderedAlpha(data.pokemon, orderType).reverse();
     document.getElementById('root').innerHTML = ShowPokemons(listOrderPokemon);
     AssignCardEventClick();
+  } else if (orderType === 'ev') {
+    StartApp();
   }
 });
 
 
 const optionLeague = document.querySelectorAll('.dropdown-content a');
-
 optionLeague.forEach((league) => league.addEventListener('click', (event) => {
   const leagueId = event.target.closest('a').id;
   const leagueClicked = FilterByLeague(data.pokemon, leagueId);
