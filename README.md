@@ -317,13 +317,7 @@ Estos son datos que te proponemos:
   olímpiadas de invierno y verano del siglo XXI.
    - [Investigación con interesados en atletas olímpicos](/src/data/atletas/README.md)
 
-<!---
-¡Too much information para comenzar (Diego)!
-Una opción serían cálculos estadísticos como el promedio, el máximo o el mínimo,
-por ejemplo, si tenemos una colección que representa a un grupo de personas,
-y cada persona está representada como un _objeto_ con una _propiedad_ `altura`,
-podríamos elegir calcular la altura promedio en el grupo entre otras cosas.
---->
+
 
 ## 3. Objetivos de aprendizaje
 
