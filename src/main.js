@@ -11,7 +11,7 @@ import data from './data/pokemon/pokemon.js';
 const navbar = document.getElementById('navbar');
 const searchContainer = document.getElementById('search');
 const resultSearch = document.getElementById('ulSearch');
-const mediaQueriesMin = window.matchMedia('(min-width:360px)');
+let mediaQueriesMin = window.matchMedia('(min-width:360px)');
 const mediaQueriesMax = window.matchMedia('(max-width:760px)');
 const sticky = navbar.offsetTop;
 
@@ -68,7 +68,7 @@ const ShowPokemons = (pokemons) => {
     mainView += `
         <div id="${obj.num}" class="pokemon">
           <div class="containerImg"><img class="img1" src="${obj.img}"/></div>
-          <p class="numId"> N°${obj.num}</p> 
+          <p class="numId"> N°${obj.num}</p>
           <p>${obj.name.toUpperCase()}</p>
           <div>${imgTypePokemon}</div>
           <div>${letterTypePokemon}</div>
@@ -130,7 +130,7 @@ const Evolution = (pokemon) => {
   if (pokemon.evolution['next-evolution'] === undefined && pokemon.evolution['prev-evolution'] === undefined) {
     templateEvolution += `
   <div class="evolution-each-container">
-    <h4 class="">This pokemon is not part of an evolutionary line</h4>    
+    <h4 class="">This pokemon is not part of an evolutionary line</h4>
   </div>
   `;
   }
@@ -138,7 +138,7 @@ const Evolution = (pokemon) => {
     templateEvolution += `
   <div class="evolution-each-container">
     <img class="evolution-img" src="https://www.serebii.net/pokemongo/pokemon/${pokemon.evolution['next-evolution'][0].num}.png"/>
-    <h4 class="evolution-h4">Next-evolution</h4>    
+    <h4 class="evolution-h4">Next-evolution</h4>
     <p class="evolution-p">#${pokemon.evolution['next-evolution'][0].num}</p>
     <p class="evolution-p">${pokemon.evolution['next-evolution'][0].name.toUpperCase()}</p>
   </div>
@@ -147,7 +147,7 @@ const Evolution = (pokemon) => {
       templateEvolution += `
       <div class="evolution-each-container">
         <img class="evolution-img" src="https://www.serebii.net/pokemongo/pokemon/${pokemon.evolution['next-evolution'][0]['next-evolution'][0].num}.png"/>
-        <h4 class="evolution-h4">Next-evolution</h4>        
+        <h4 class="evolution-h4">Next-evolution</h4>
         <p class="evolution-p">#${pokemon.evolution['next-evolution'][0]['next-evolution'][0].num}</p>
         <p class="evolution-p">${pokemon.evolution['next-evolution'][0]['next-evolution'][0].name.toUpperCase()}</p>
       </div>
@@ -158,7 +158,7 @@ const Evolution = (pokemon) => {
     templateEvolution += `
       <div class="evolution-each-container">
         <img class="evolution-img" src="https://www.serebii.net/pokemongo/pokemon/${pokemon.evolution['prev-evolution'][0].num}.png"/>
-        <h4 class="evolution-h4">Prev-evolution</h4>        
+        <h4 class="evolution-h4">Prev-evolution</h4>
         <p class="evolution-p">#${pokemon.evolution['prev-evolution'][0].num}</p>
         <p class="evolution-p">${pokemon.evolution['prev-evolution'][0].name.toUpperCase()}</p>
       </div>
@@ -167,7 +167,7 @@ const Evolution = (pokemon) => {
       templateEvolution += `
       <div class="evolution-each-container">
         <img class="evolution-img" src="https://www.serebii.net/pokemongo/pokemon/${pokemon.evolution['prev-evolution'][0]['prev-evolution'][0].num}.png"/>
-        <h4 class="evolution-h4">Prev-evolution</h4>        
+        <h4 class="evolution-h4">Prev-evolution</h4>
         <p class="evolution-p">#${pokemon.evolution['prev-evolution'][0]['prev-evolution'][0].num}</p>
         <p class="evolution-p">${pokemon.evolution['prev-evolution'][0]['prev-evolution'][0].name.toUpperCase()}</p>
       </div>
@@ -184,16 +184,16 @@ const GetInfoModalHtml = (pokeId) => {
     <span id="sp" class="close">&times;</span>
         <div class="modal__block1">
           <img class="modal__block1-img" src="${pokeId.img}"/>
-          <p class="modal__block1-txt">#${pokeId.num}</p> 
+          <p class="modal__block1-txt">#${pokeId.num}</p>
           <p class="txt-modal-title">${pokeId.name.toUpperCase()}</p>
         </div>
       <div class="modalblock-2">
-        <div class="modal__block2"> 
+        <div class="modal__block2">
           <div class="block-2-sub-container"><p class="block2-p">${pokeId.size.weight}</p><p class="block2-p-title">WEIGHT</p></div>
           <div class="block-2-sub-container"><img class="modal__img-egg" src="./img/types-pokemon/${pokeId.type[0]}.png"/><p class="block2-p-title">${pokeId.type[0]}</p></div>
           <div class="block-2-sub-container"><img class="modal__img-egg" src="img/egg-lucky.png"/><p class="block2-p-title">${pokeId.egg}</p></div>
           <div><p class="block2-p">${pokeId.size.height}</p><p class="block2-p-title">HEIGHT</p></div>
-        </div> 
+        </div>
         <div class="modal__block4">
           ${ResistanceAndWeaknesses(pokeId)}
         </div>

@@ -82,6 +82,11 @@ body{
     flex-flow: row wrap;
     justify-content: space-around;
 }
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .pokemon{
   padding: 2rem 2rem;
   display: flex;
